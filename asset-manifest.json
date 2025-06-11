@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/design-patterns-animation/static/css/main.e2de7f71.css",
+    "main.js": "/design-patterns-animation/static/js/main.5c70374d.js",
+    "static/js/453.eafd9076.chunk.js": "/design-patterns-animation/static/js/453.eafd9076.chunk.js",
+    "index.html": "/design-patterns-animation/index.html",
+    "main.e2de7f71.css.map": "/design-patterns-animation/static/css/main.e2de7f71.css.map",
+    "main.5c70374d.js.map": "/design-patterns-animation/static/js/main.5c70374d.js.map",
+    "453.eafd9076.chunk.js.map": "/design-patterns-animation/static/js/453.eafd9076.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e2de7f71.css",
+    "static/js/main.5c70374d.js"
+  ]
+}
