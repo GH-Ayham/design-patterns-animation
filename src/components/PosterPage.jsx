@@ -1,4 +1,5 @@
 import React from "react";
+import './PosterPage.css';
 import GridIllusion from "./GridIllusion";
 import { useNavigate } from "react-router-dom";
 
@@ -14,20 +15,7 @@ const PosterPage = ({
   const navigate = useNavigate();
 
   return (
-    <div
-      style={{
-        background: darkMode
-          ? "linear-gradient(to bottom, #1c1c1c, #111)"
-          : "#eaeaea",
-        color: darkMode ? "#f5f5f5" : "#111",
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        padding: "40px 20px",
-        position: "relative"
-      }}
-    >
+    <div className={`poster-page ${darkMode ? 'dark' : 'light'}`}>
       {/* POSTER-RAHMEN */}
       <div
         style={{
