@@ -1,8 +1,10 @@
 /*@Autor: Ayham Abou Issmaiel*/
 
 import React, { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GridIllusion from "./components/GridIllusion";
 import ControlPanel from "./components/ControlPanel";
+import PosterPage from "./components/PosterPage";
 
 function App() {
   const [shape, setShape] = useState("square");
@@ -78,54 +80,80 @@ function App() {
   };
 
   return (
-    <div className="square-container">
-      <div className="panel-area">
-        <ControlPanel
-          shape={shape}
-          setShape={setShape}
-          fillColor={fillColor}
-          setFillColor={setFillColor}
-          speed={speed}
-          setSpeed={setSpeed}
-          gridSize={gridSize}
-          setGridSize={setGridSize}
-          motion={motion}
-          setMotion={setMotion}
-          hoverEffect={hoverEffect}
-          setHoverEffect={setHoverEffect}
-          intensity={intensity}
-          preset={preset}
-          setPreset={setPreset}
-          applyPreset={applyPreset}
-          applyRandomPattern={applyRandomPattern}
-          darkMode={darkMode}
-          setDarkMode={setDarkMode}
-          config={config}
+    <BrowserRouter>
+      <Routes>
+        {/* Hauptseite: Dein bestehendes Layout */}
+        <Route
+          path="/"
+          element={
+            <div className="square-container">
+              <div className="panel-area">
+                <ControlPanel
+                  shape={shape}
+                  setShape={setShape}
+                  fillColor={fillColor}
+                  setFillColor={setFillColor}
+                  speed={speed}
+                  setSpeed={setSpeed}
+                  gridSize={gridSize}
+                  setGridSize={setGridSize}
+                  motion={motion}
+                  setMotion={setMotion}
+                  hoverEffect={hoverEffect}
+                  setHoverEffect={setHoverEffect}
+                  intensity={intensity}
+                  preset={preset}
+                  setPreset={setPreset}
+                  applyPreset={applyPreset}
+                  applyRandomPattern={applyRandomPattern}
+                  darkMode={darkMode}
+                  setDarkMode={setDarkMode}
+                  config={config}
+                />
+              </div>
+              <div className="grid-area">
+                <GridIllusion
+                  shape={shape}
+                  setShape={setShape}
+                  fillColor={fillColor}
+                  setFillColor={setFillColor}
+                  speed={speed}
+                  setSpeed={setSpeed}
+                  gridSize={gridSize}
+                  setGridSize={setGridSize}
+                  motion={motion}
+                  setMotion={setMotion}
+                  hoverEffect={hoverEffect}
+                  setHoverEffect={setHoverEffect}
+                  intensity={intensity}
+                  preset={preset}
+                  setPreset={setPreset}
+                  applyPreset={applyPreset}
+                  applyRandomPattern={applyRandomPattern}
+                  config={config}
+                />
+              </div>
+            </div>
+          }
         />
-      </div>
-      <div className="grid-area">
-        <GridIllusion
-          shape={shape}
-          setShape={setShape}
-          fillColor={fillColor}
-          setFillColor={setFillColor}
-          speed={speed}
-          setSpeed={setSpeed}
-          gridSize={gridSize}
-          setGridSize={setGridSize}
-          motion={motion}
-          setMotion={setMotion}
-          hoverEffect={hoverEffect}
-          setHoverEffect={setHoverEffect}
-          intensity={intensity}
-          preset={preset}
-          setPreset={setPreset}
-          applyPreset={applyPreset}
-          applyRandomPattern={applyRandomPattern}
-          config={config}
+
+        {/* Neue Seite: Digital Poster */}
+        <Route
+          path="/poster"
+          element={
+            <PosterPage
+              shape={shape}
+              fillColor={fillColor}
+              speed={speed}
+              gridSize={gridSize}
+              motion={motion}
+              intensity={intensity}
+              darkMode={darkMode}
+            />
+          }
         />
-      </div>
-    </div>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

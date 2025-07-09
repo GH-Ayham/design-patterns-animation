@@ -1,6 +1,8 @@
 /*@Autor: Ayham Abou Issmaiel*/
 
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 
 const ControlPanel = ({
   shape,
@@ -24,6 +26,9 @@ const ControlPanel = ({
   intensity,
   setIntensity,
 }) => {
+
+  const navigate = useNavigate(); // ✅ Richtige Position
+
   return (
     <div className={`control-panel ${darkMode ? "dark" : ""}`}>
       <h2>🛠️ Spiel Menu</h2>
@@ -177,6 +182,11 @@ const ControlPanel = ({
           </div>
         </label>
       </div>
+
+      {/* ✅ Neuer Button im gleichen Stil */}
+      <button className="random-btn" onClick={() => navigate("/poster")}>
+        🖼️ Digital Poster anzeigen
+      </button>
 
       <div className="author-signature">
         Autor: <strong>Ayham Abou Issmaiel</strong>
